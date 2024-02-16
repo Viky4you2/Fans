@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white; /* Change text color to make it visible on the background */
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for better readability */
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+    </style>
+    
+    <!-- Google Analytics Tracking Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
+    <!-- End Google Analytics Tracking Code -->
+</head>
+<body>
+    <!-- Your website content goes here -->
+    <h1>Welcome to Your Website</h1>
+    <p>Visitors today: <span id="visitorsToday"></span></p>
+    <p>Total visitors: <span id="totalVisitors"></span></p>
+
+    <!-- Your other HTML content -->
+
+    <!-- Footer -->
+    <footer>
+        <p>Owned by: Your Name</p> <!-- Replace "Your Name" with your actual name -->
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Google Analytics Script to Update Visitor Count -->
+    <script>
+      gtag('event', 'page_view', {
+        'send_to': 'UA-XXXXXXXXX-X',
+        'event_category': 'Visitors',
+        'event_label': 'Page View',
+        'event_callback': function() {
+          var now = new Date();
+          var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+          var endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+          gtag('config', 'UA-XXXXXXXXX-X', {
+            'custom_map': {'dimension1': 'visitStartTime'},
+            'dimension1': startOfDay.getTime(),
+            'custom_map': {'dimension2': 'visitEndTime'},
+            'dimension2': endOfDay.getTime()
+          });
+          gtag('event', 'set_custom_var', {'visitStartTime': startOfDay.getTime(), 'visitEndTime': endOfDay.getTime(), 'page': '/'});
+          gtag('event', 'get_visits');
+        }
+      });
+      window.addEventListener('load', function() {
+        var now = new Date();
+        var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        var endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+        gtag('event', 'set_custom_var', {'visitStartTime': startOfDay.getTime(), 'visitEndTime': endOfDay.getTime(), 'page': '/'});
+        gtag('event', 'get_visits');
+      });
+      window.addEventListener('get_visits', function(e) {
+        document.getElementById('visitorsToday').innerText = e.detail.visitsToday;
+        document.getElementById('totalVisitors').innerText = e.detail.totalVisits;
+      });
+    </script>
+    <!-- End Google Analytics Script -->
+
+</body>
+</html>
