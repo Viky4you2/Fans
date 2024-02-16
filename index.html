@@ -10,10 +10,11 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            background-position: center; /* Imaginea de fundal va fi întotdeauna centrată */
             font-family: Arial, sans-serif;
             color: rgb(255, 255, 255);
-            margin: 0; /* Elimină marginile implicite ale body-ului */
-            padding: 0; /* Elimină padding-ul implicite ale body-ului */
+            margin: 0;
+            padding: 0;
         }
         footer {
             position: fixed;
@@ -24,14 +25,13 @@
             text-align: center;
             color: white;
         }
-        /* Stiluri pentru ecranele mici (max-width: 768px) */
         @media only screen and (max-width: 768px) {
             body {
-                background-size: contain; /* Ajustează dimensiunea imaginii de fundal pentru a se potrivi ecranului mic */
+                background-size: contain;
             }
             footer {
-                position: relative; /* Anulează poziționarea fixă pentru a evita suprapunerile pe ecrane mici */
-                margin-top: 20px; /* Adaugă un spațiu deasupra footer-ului pentru a evita suprapunerile */
+                position: relative;
+                margin-top: 20px;
             }
         }
     </style>
