@@ -1,65 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <title>Fans</title>
     <style>
         body {
-            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with the path to your background image */
+            background-image: url('calea/catre/imaginea-de-fundal.jpg'); /* Înlocuiește 'calea/catre/imaginea-de-fundal.jpg' cu calea către imaginea ta de fundal */
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             font-family: Arial, sans-serif;
-            color: white; /* Change text color to make it visible on the background */
+            color: white; /* Schimbă culoarea textului pentru a fi vizibil pe fundal */
         }
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for better readability */
+            background-color: rgba(0, 0, 0, 0.5); /* Fundal negru semi-transparent pentru o citire mai bună */
             padding: 10px 0;
             text-align: center;
             color: white;
         }
     </style>
     
-    <!-- Google Analytics Tracking Code -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <!-- Codul de urmărire Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RE9JCNP0XZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-XXXXXXXXX-X');
+      gtag('config', 'G-RE9JCNP0XZ');
     </script>
-    <!-- End Google Analytics Tracking Code -->
+    <!-- Sfârșitul codului de urmărire Google Analytics -->
 </head>
 <body>
-    <!-- Your website content goes here -->
-    <h1>Welcome to Your Website</h1>
-    <p>Visitors today: <span id="visitorsToday"></span></p>
-    <p>Total visitors: <span id="totalVisitors"></span></p>
+    <!-- Conținutul site-ului tău -->
+    <h1>Numarul de perverși:</h1>
+    <p>Vizitatori azi: <span id="visitorsToday"></span></p>
+    <p>Total vizitatori: <span id="totalVisitors"></span></p>
 
-    <!-- Your other HTML content -->
+    <!-- Alte conținuturi HTML -->
 
     <!-- Footer -->
     <footer>
-        <p>Owned by: Your Name</p> <!-- Replace "Your Name" with your actual name -->
+        <p>Deținut de: blackblade4you2</p> <!-- Înlocuiește "NUMELE TĂU" cu numele tău real -->
     </footer>
-    <!-- End Footer -->
+    <!-- Sfârșitul Footer-ului -->
 
-    <!-- Google Analytics Script to Update Visitor Count -->
+    <!-- Scriptul Google Analytics pentru actualizarea numărului de vizitatori -->
     <script>
       gtag('event', 'page_view', {
-        'send_to': 'UA-XXXXXXXXX-X',
-        'event_category': 'Visitors',
-        'event_label': 'Page View',
+        'send_to': 'G-RE9JCNP0XZ',
+        'event_category': 'Vizitatori',
+        'event_label': 'Vizualizare Pagină',
         'event_callback': function() {
           var now = new Date();
           var startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
           var endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-          gtag('config', 'UA-XXXXXXXXX-X', {
+          gtag('config', 'G-RE9JCNP0XZ', {
             'custom_map': {'dimension1': 'visitStartTime'},
             'dimension1': startOfDay.getTime(),
             'custom_map': {'dimension2': 'visitEndTime'},
@@ -81,7 +81,7 @@
         document.getElementById('totalVisitors').innerText = e.detail.totalVisits;
       });
     </script>
-    <!-- End Google Analytics Script -->
+    <!-- Sfârșitul Scriptului Google Analytics -->
 
 </body>
 </html>

@@ -1,1 +1,1 @@
-just a simple site
+Just a simple site!
