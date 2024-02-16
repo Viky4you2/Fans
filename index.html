@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fans</title>
     <style>
         body {
-            background-image: url('Images/cat.jpg'); /* Set the provided image as background */
+            background-image: url('Images/cat.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             font-family: Arial, sans-serif;
-            color: rgb(255, 255, 255); /* Change text color to make it visible on the background */
+            color: rgb(255, 255, 255);
+            margin: 0; /* Elimină marginile implicite ale body-ului */
+            padding: 0; /* Elimină padding-ul implicite ale body-ului */
         }
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundal negru semi-transparent pentru o citire mai bună */
-            padding: 0px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
             text-align: center;
             color: white;
+        }
+        /* Stiluri pentru ecranele mici (max-width: 768px) */
+        @media only screen and (max-width: 768px) {
+            body {
+                background-size: contain; /* Ajustează dimensiunea imaginii de fundal pentru a se potrivi ecranului mic */
+            }
+            footer {
+                position: relative; /* Anulează poziționarea fixă pentru a evita suprapunerile pe ecrane mici */
+                margin-top: 20px; /* Adaugă un spațiu deasupra footer-ului pentru a evita suprapunerile */
+            }
         }
     </style>
     
@@ -37,21 +48,16 @@
     <!-- Sfârșitul codului de urmărire Google Analytics -->
 </head>
 <body>
-    <!-- Conținutul site-ului tău -->
     <h1>Numarul de perverși</h1>
     <p><h2>Vizitatori azi: <span id="visitorsToday"></span></h2></p>
     <p><h2>Total vizitatori: <span id="totalVisitors"></span></h2></p>
 
-    <!-- Alte conținuturi HTML -->
-
-    <!-- Footer -->
     <footer>
-        <p>Deținut de: blackblade4you2</p> <!-- Înlocuiește "NUMELE TĂU" cu numele tău real -->
+        <p>Deținut de: blackblade4you2</p>
     </footer>
-    <!-- Sfârșitul Footer-ului -->
 
-    <!-- Scriptul Google Analytics pentru actualizarea numărului de vizitatori -->
     <script>
+      // Scriptul Google Analytics pentru actualizarea numărului de vizitatori
       gtag('event', 'page_view', {
         'send_to': 'G-RE9JCNP0XZ',
         'event_category': 'Vizitatori',
@@ -82,7 +88,5 @@
         document.getElementById('totalVisitors').innerText = e.detail.totalVisits;
       });
     </script>
-    <!-- Sfârșitul Scriptului Google Analytics -->
-
 </body>
 </html>
